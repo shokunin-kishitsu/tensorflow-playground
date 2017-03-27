@@ -28,3 +28,5 @@ linear_model = W * x + b
 
 init = tf.global_variables_initializer()
 sess.run(init)
+
+print(sess.run(linear_model, {x:[1,2,3,4]}))
