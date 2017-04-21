@@ -11,6 +11,14 @@ import tensorflow as tf
 
 FLAGS = None
 
+def weight_variable(shape):
+  initial = tf.truncated_normal(shape, stddev=0.1)
+  return tf.Variable(initial)
+
+def bias_variable(shape):
+  initial = tf.constant(0.1, shape=shape)
+  return tf.Variable(initial)
+
 def main(_):
   # Import data
   mnist = input_data.read_data_sets(FLAGS.data_dir, one_hot=True)
